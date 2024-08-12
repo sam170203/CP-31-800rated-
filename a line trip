@@ -1,0 +1,34 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <limits.h>
+#include <math.h>
+using namespace std;
+
+
+int main() { 
+  int t;
+  cin>>t;
+  while(t--){
+  int n,k;
+    cin>>n>>k;
+    vector<int> a(n);
+    for(int i=0;i<n;i++){
+    cin>>a[i];
+     }
+    int ans=0;
+    int prev=0;
+// to get the max distance keep a indice at previous array pointer and at current and get  then iterate in all array
+      for(int i=0;i<n;i++){
+        ans=max(ans,a[i]-prev);
+        prev=a[i];
+
+    
+    }
+    ans=max(ans,2*(k-prev));
+
+    cout<<ans<<endl;
+
+    
+  }
+}
